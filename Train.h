@@ -5,9 +5,10 @@
 
 #include "TrainCar.h"
 #include <string>
+
 class Train {
 private:
-    TrainCar car;
+    TrainCar *car;
 
 public:
     Train();

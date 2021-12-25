@@ -1,12 +1,12 @@
 #include "TrainCar.h"
 
-TrainCar::TrainCar(string c,int value) {
+TrainCar::TrainCar(string c,int v) {
     cargo = c;
     value = v;
 }//end TrainCar constructor
 
 TrainCar::~TrainCar(){
-    cargo = null;
+    cargo = nullptr;
     value = 0;
 }//end destructor
 

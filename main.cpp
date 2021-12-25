@@ -5,6 +5,8 @@
 #include <sstream>
 #include <vector>
 
+#include "Train.h"
+
 using namespace std;
 
 void processFile(char *);
@@ -24,7 +26,7 @@ void processFile(char *filename) {
     inFile.open(filename);
 
     string nextLine;
-
+    Train *train = new Train();
     while (getline(inFile, nextLine)) {
         istringstream iss(nextLine);
         string stuff;
@@ -33,6 +35,9 @@ void processFile(char *filename) {
         while (iss >> stuff) {
             line.push_back(stuff);
         }
+
+
+
         cout << "Processing command:  " << nextLine << endl;
         if(line.size()>1){
             if(strcmp(line[0].c_str(),"PICKUP")==0){
