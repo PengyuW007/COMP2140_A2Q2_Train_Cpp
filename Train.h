@@ -26,9 +26,9 @@ public:
     void printInfo();//Print one line displaying the number of cars
     //in the train and the total value of the cargo. On a second line, print the train from front
     //to back, listing the type of cargo in each car (the list of cars may wrap to multiple lines).
-    void dropLast(int num);
+    int dropLast(int num);
 
-    void dropFirst(int num);
+    int dropFirst(int num);
 
     void drop(string type, int num);
 

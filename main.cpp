@@ -57,11 +57,16 @@ void processFile(char *filename) {
                         train->addCar(line[0].c_str(), 0);
                         numEngine++;
                     } else {
-
-                        //train->addCar(line[0].c_str(),num);
+                        //cout<<line[1]<<endl;
+                        int value = atoi(line[1].c_str());
+                        /*****************PROBLEM***************/
+                        train->addCar(line[0].c_str(), value);
+                        /*****************PROBLEM***************/
+                        //numCargo++;
+                        //cout << value << endl;
                     }
-                }
 
+                }
             }
         }
 
