@@ -1,31 +1,31 @@
 #include "TrainNode.h"
 
 TrainNode::TrainNode(string t, int v) {
-    car = new  TrainCar(t,v);
-    next = null;
-    prev = null;
+    car = new TrainCar(t,v);
+    next = nullptr;
+    prev = nullptr;
 }//end constructor
 
 string TrainNode::getType() {
-    return car.getCargo();
+    return car->getCargo();
 }
 
 int TrainNode::getValue() {
-    return car.getValue();
+    return car->getValue();
 }
 
-TrainNode TrainNode::getNext() {
+TrainNode *TrainNode::getNext() {
     return next;
 }
 
-TrainNode TrainNode::getPrev() {
+TrainNode *TrainNode::getPrev() {
     return prev;
 }
 
-TrainNode TrainNode::setNext(TrainNode newNext) {
+TrainNode *TrainNode::setNext(TrainNode *newNext) {
     return next = newNext;
 }
 
-TrainNode TrainNode::setPrev(TrainNode newPrev) {
+TrainNode *TrainNode::setPrev(TrainNode *newPrev) {
     return prev = newPrev;
 }

@@ -4,7 +4,9 @@
 #pragma once
 
 #include "TrainNode.h"
+#include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 

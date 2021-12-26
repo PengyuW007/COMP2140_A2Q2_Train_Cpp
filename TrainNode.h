@@ -2,10 +2,12 @@
 #define A2Q2TRAINCPP_TRAINNODE_H
 
 #include "TrainCar.h"
+#include <string>
 
+using namespace std;
 class TrainNode {
 private:
-    TrainCar car;
+    TrainCar *car;
     TrainNode *next;
     TrainNode *prev;
 public:
@@ -15,13 +17,13 @@ public:
 
     int getValue();
 
-    TrainNode getNext();
+    TrainNode *getNext();
 
-    TrainNode getPrev();
+    TrainNode *getPrev();
 
-    TrainNode setNext(TrainNode newNext);
+    TrainNode *setNext(TrainNode *newNext);
 
-    TrainNode setPrev(TrainNode newPrev);
+    TrainNode *setPrev(TrainNode *newPrev);
 
 };
 

@@ -1,8 +1,7 @@
 #include "TrainCar.h"
-#include "TrainNode.h"
+
 
 TrainCar::TrainCar(string c, int v) {
-    //TrainNode *newNode = new TrainNode(c,v);
     cargo = c;
     value = v;
 }//end TrainCar constructor

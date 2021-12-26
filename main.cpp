@@ -37,15 +37,15 @@ void processFile(char *filename) {
         }
 
         cout << "Processing command:  " << nextLine << endl;
-        if(line.size()>1){
-            if(strcmp(line[0].c_str(),"PICKUP")==0){
+        if (line.size() > 1) {
+            if (strcmp(line[0].c_str(), "PICKUP") == 0) {
 
                 int num = atoi(line[1].c_str());
                 int numCargo = 0;
                 int numEngine = 0;
 
-                for(int i = 0;i<num;i++){
-                    getline(inFile,nextLine);
+                for (int i = 0; i < num; i++) {
+                    getline(inFile, nextLine);
                     istringstream iss(nextLine);
                     string stuff;
 
@@ -53,10 +53,10 @@ void processFile(char *filename) {
                     while (iss >> stuff) {
                         line.push_back(stuff);
                     }
-                    if(strcmp(line[0].c_str(),"engine")==0){
-                        //train->addCar(line[0].c_str(),0);
-                        //numEngine++;
-                    }else{
+                    if (strcmp(line[0].c_str(), "engine") == 0) {
+                        train->addCar(line[0].c_str(), 0);
+                        numEngine++;
+                    } else {
 
                         //train->addCar(line[0].c_str(),num);
                     }
