@@ -1,7 +1,7 @@
 CC = clang++
 CFLAGS = -Wall --std=c++11
 
-OBJFILES = Train.o 
+OBJFILES = Train.o TrainCar.o TrainNode.o
 
 all: main.o $(OBJFILES)
 				$(CC) $(CFLAGS) -o main $< $(OBJFILES)
