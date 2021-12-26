@@ -3,17 +3,23 @@
 
 #pragma once
 
-#include "TrainCar.h"
+#include "TrainNode.h"
 #include <string>
+
+using namespace std;
 
 class Train {
 private:
-    TrainCar *car;
+    //TrainCar *car;
+    TrainNode *first;
+    TrainNode *last;
 
 public:
     Train();
 
     ~Train();
+
+    void addCar(string t,int v);
 
     void printInfo();//Print one line displaying the number of cars
     //in the train and the total value of the cargo. On a second line, print the train from front
@@ -23,6 +29,8 @@ public:
     void dropFirst(int num);
 
     void drop(string type, int num);
+
+    void printCarInfo();
 };
 
 #endif //TRAINCPP_TRAIN_H

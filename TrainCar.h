@@ -20,6 +20,8 @@ public:
     string getCargo();
 
     int getValue();
+
+    string toString();
 };
 
 
