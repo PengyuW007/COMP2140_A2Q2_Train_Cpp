@@ -38,11 +38,12 @@ void processFile(char *filename) {
 
         cout << "Processing command:  " << nextLine << endl;
         if (line.size() > 1) {
+            int numCargo = 0;
+            int numEngine = 0;
             if (strcmp(line[0].c_str(), "PICKUP") == 0) {
 
                 int num = atoi(line[1].c_str());
-                int numCargo = 0;
-                int numEngine = 0;
+
 
                 for (int i = 0; i < num; i++) {
                     getline(inFile, nextLine);
@@ -53,20 +54,19 @@ void processFile(char *filename) {
                     while (iss >> stuff) {
                         line.push_back(stuff);
                     }
+                    int value = atoi(line[1].c_str());
                     if (strcmp(line[0].c_str(), "engine") == 0) {
-                        train->addCar(line[0].c_str(), 0);
+                        train->addCar(line[0].c_str(), value);
                         numEngine++;
                     } else {
-                        //cout<<line[1]<<endl;
-                        int value = atoi(line[1].c_str());
                         /*****************PROBLEM***************/
                         train->addCar(line[0].c_str(), value);
                         /*****************PROBLEM***************/
-                        //numCargo++;
-                        //cout << value << endl;
+                        numCargo++;
                     }
 
                 }
+                cout << numCargo << endl;
             }
         }
 
