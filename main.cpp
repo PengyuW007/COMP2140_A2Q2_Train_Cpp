@@ -56,10 +56,10 @@ void processFile(char *filename) {
                     }
                     int value = atoi(line[1].c_str());
                     if (strcmp(line[0].c_str(), "engine") == 0) {
-                        train->addCar(line[0].c_str(), value);
+                        train->addCar(line[0], value);
                         numEngine++;
                     } else {
-                        train->addCar(line[0].c_str(), value);
+                        train->addCar(line[0], value);
                         numCargo++;
                     }
                 }
@@ -76,7 +76,7 @@ void processFile(char *filename) {
                 cout << value << " cars dropped from train" << endl;
             }//end DROPFIRST
             else if (strcmp(line[0].c_str(), "DROP") == 0) {
-                string type = line[1].c_str();
+                string type = line[1];
                 int num = atoi(line[2].c_str());
                 int value = train->drop(type, num);
                 cout << value << " cars dropped from train" << endl;
