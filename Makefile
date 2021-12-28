@@ -15,6 +15,6 @@ all: main.o $(OBJFILES)
 
 
 clean:
-				rm *.o main test
+				rm *.o main #test
 							
 

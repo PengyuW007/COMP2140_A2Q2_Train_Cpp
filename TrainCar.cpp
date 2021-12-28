@@ -1,6 +1,14 @@
 #include "TrainCar.h"
 
-
+//==============================================================
+// TrainCar class
+//
+// PURPOSE: Store information for one train car.
+//
+// METHODS: - constructor: public TrainCar(String t, int v)
+//          - accessors: public String getCargoType()
+//                       public int getValue()
+//==============================================================
 TrainCar::TrainCar(string c, int v) {
     cargo = c;
     value = v;

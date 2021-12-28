@@ -11,6 +11,14 @@ using namespace std;
 
 void processFile(char *);
 
+//==========================================================
+// Application (main) class
+//
+// PURPOSE: Read a file of commands and perform requested
+//          operations on a train (doubly-linked list).
+//
+// ARGUMENTS: None (could also pass the filename as an argument)
+//==========================================================
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         cout << "Usage: " << argv[0] << " <file name>" << endl;
@@ -22,6 +30,14 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+//==========================================================
+// processFile
+//
+// PURPOSE: Create a Train, read input file one line at a time
+//          & perform requested operations.
+//
+// PARAMETERS: filename - input file
+//==========================================================
 void processFile(char *filename) {
     ifstream inFile;
     inFile.open(filename);

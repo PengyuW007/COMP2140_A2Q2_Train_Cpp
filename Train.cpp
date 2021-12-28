@@ -1,5 +1,28 @@
+//==============================================================
+// Train class
+//
+// PURPOSE: A linked list to store the cars on a train, where the list is doubly-linked.
+//
+// METHODS: - constructor: public Train()
+//          - public void addCar(String t, int v) - add a car to the train
+//          - public int dropFirst(int numToDrop) - delete first numToDrop cargo cars
+//          - public int dropLast(int numToDrop) - delete last numToDrop cargo cars
+//          - public int dropCars(String type, int numToDrop) - delete first numToDrop cars with given type
+//          - public int countEngines() - count number of engines in train
+//          - public int countCargoCars() - count number of cargo cars in train
+//          - public int sumValues() - get total value of all cargo
+//          - public void printTrainInfo() - print the cars in the train, and total value
+//==============================================================
 #include "Train.h"
 
+//==========================================================
+// Train constructor
+//
+// PURPOSE: Create a new train, with a single engine.
+//
+// PARAMETERS:
+//   None
+//==========================================================
 Train::Train() {
     first = new TrainNode("engine", 0);
     last = first;
@@ -9,6 +32,18 @@ Train::~Train() {
     cout << "No car nor engine on the train." << endl;
 }
 
+//==========================================================
+// dropLast
+//
+// PURPOSE: Delete the last numToDrop cargo cars.
+//
+// PARAMETERS:
+//   numToDrop - the number of cars to delete from the train
+//
+// RETURN:
+//   int - the number of cars dropped (equal to numToDrop if
+//         at least that many cargo cars existed)
+//==========================================================
 int Train::dropLast(int numToDrop) {
     int numDropped = 0;
     TrainNode *curr = last;
@@ -34,8 +69,20 @@ int Train::dropLast(int numToDrop) {
         }
     }
     return numDropped;
-}
+}//end dropLast
 
+//==========================================================
+// dropFirst
+//
+// PURPOSE: Delete the first numToDrop cargo cars.
+//
+// PARAMETERS:
+//   numToDrop - the number of cars to delete from the train
+//
+// RETURN:
+//   int - the number of cars dropped (equal to numToDrop if
+//         at least that many cargo cars existed)
+//==========================================================
 int Train::dropFirst(int numToDrop) {
     int numDropped = 0;
     TrainNode *curr = first;
@@ -71,6 +118,19 @@ int Train::dropFirst(int numToDrop) {
     return numDropped;
 }//end dropFirst
 
+//==========================================================
+// drop
+//
+// PURPOSE: Delete the first numToDrop cars with the given type.
+//
+// PARAMETERS:
+//   type - the type of car to drop
+//   numToDrop - the number of cars to delete from the train
+//
+// RETURN:
+//   int - the number of cars dropped (equal to numToDrop if
+//         at least that many cargo cars of the given type existed)
+//==========================================================
 int Train::drop(string type, int numToDrop) {
     int numDropped = 0;
     TrainNode *curr = first;
@@ -104,6 +164,16 @@ int Train::drop(string type, int numToDrop) {
     return numDropped;
 }//end drop
 
+//==========================================================
+// addCar
+//
+// PURPOSE: Add a car with given type and value to the train.
+//          Add engines at front. Add cargo at end.
+//
+// PARAMETERS:
+//   t - the type of cargo
+//   v - value of the cargo
+//==========================================================
 void Train::addCar(string t, int v) {
     TrainNode *temp = new TrainNode(t, v);
 
@@ -133,6 +203,17 @@ void Train::addCar(string t, int v) {
     }
 }//end addCar
 
+//==========================================================
+// countEngines
+//
+// PURPOSE: Return the number of engines on the train.
+//
+// PARAMETERS:
+//   none
+//
+// RETURN:
+//   int - the number of engines on the train
+//==========================================================
 int Train::countEngines() {
     int count = 0;
     TrainNode *curr = first;
@@ -146,6 +227,17 @@ int Train::countEngines() {
     return count;
 }//end countEngines
 
+//==========================================================
+// countCargoCars
+//
+// PURPOSE: Return the number of non-engines on the train.
+//
+// PARAMETERS:
+//   none
+//
+// RETURN:
+//   int - the number of non-engines on the train
+//==========================================================
 int Train::countCargoCars() {
     int count = 0;
     TrainNode *curr = first;
@@ -160,6 +252,17 @@ int Train::countCargoCars() {
     return count;
 }//end countCargoCars
 
+//==========================================================
+// sumValues
+//
+// PURPOSE: Calculate and return the total value of cargo on the train.
+//
+// PARAMETERS:
+//   none
+//
+// RETURN:
+//   int - the total value of the cargo on the train
+//==========================================================
 int Train::sumValues() {
     int total = 0;
     TrainNode *curr = first;
@@ -173,6 +276,16 @@ int Train::sumValues() {
     return total;
 }//end sumValues
 
+//==========================================================
+// printTrainInfo
+//
+// PURPOSE: Print information about the train (summary of
+//          number of cars, total cargo value, list of all
+//          cars on train (type only).
+//
+// PARAMETERS:
+//   none
+//==========================================================
 void Train::printTrainInfo() {
     cout << "Total number of engines: " << countEngines() << ", Total number of cargo cars: " << countCargoCars() <<
          ", Total value of cargo: $ " << sumValues() << endl;
