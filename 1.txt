@@ -4,7 +4,7 @@ wheat 20000
 lumber 30000 
 engine 
 oil 45000 
-oil 60000 
+oil 60000
 PRINT 
 DROPLAST 1 
 PRINT 

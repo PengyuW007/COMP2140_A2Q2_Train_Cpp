@@ -22,9 +22,18 @@ void Train::addCar(string t, int v) {
         first = temp;
     } else {
         //add cargo at end
-        last->setNext(temp);
+        TrainNode *prev = NULL;
+        TrainNode *curr = first;
+
+        while (curr != NULL) {
+            //locate prev's location
+            prev = curr;
+            curr = curr->getNext();
+        }
+
+        prev->setNext(temp);
         temp->setPrev(last);
-        last = temp;
+        last =  temp;
     }
 
 }//end addCar
@@ -63,3 +72,12 @@ int Train::dropFirst(int numToDrop) {
     }
     return numDropped;
 }//end dropFirst
+
+TrainNode *Train::getLast() {
+    return last;
+}
+
+TrainNode *Train::getFirst() {
+    return first;
+}
+

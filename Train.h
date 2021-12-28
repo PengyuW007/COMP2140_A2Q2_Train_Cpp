@@ -33,6 +33,9 @@ public:
     void drop(string type, int num);
 
     void printCarInfo();
+
+    TrainNode*getLast();
+    TrainNode*getFirst();
 };
 
 #endif //TRAINCPP_TRAIN_H

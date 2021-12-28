@@ -66,7 +66,8 @@ void processFile(char *filename) {
                     }
 
                 }
-                cout << numCargo << endl;
+                cout << "first: "<<train->getFirst()->getType() << endl;
+                cout << "last: " << train->getLast()->getType() << endl;
             }
         }
 
