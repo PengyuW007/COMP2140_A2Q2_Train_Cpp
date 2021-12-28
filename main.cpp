@@ -63,6 +63,22 @@ void processFile(char *filename) {
                     }
                 }
                 cout << to_string(numEngine) + " engine and " << numCargo << " cars added to train" << endl;
+            }//end PICKUP
+            else if (strcmp(line[0].c_str(), "DROPLAST")==0) {
+                int num = atoi(line[1].c_str());
+                int value = train->dropLast(num);
+                cout << value << " cars dropped from train" << endl;
+            }//end DROPLAST
+            else if(strcmp(line[0].c_str(),"DROPFIRST")==0){
+                int num = atoi(line[1].c_str());
+                int value =  train->dropFirst(num);
+                cout << value << " cars dropped from train" << endl;
+            }//end DROPFIRST
+            else if(strcmp(line[0].c_str(),"DROP")==0){
+                string type = line[1].c_str();
+                int num = atoi(line[2].c_str());
+                int value = train->drop(type,num);
+               cout << value << " cars dropped from train" << endl;
             }
         } else {
             // PRINT

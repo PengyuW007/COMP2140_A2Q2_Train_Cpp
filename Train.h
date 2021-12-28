@@ -30,7 +30,7 @@ public:
 
     int dropFirst(int num);
 
-    void drop(string type, int num);
+    int drop(string type, int num);
 
     int countEngines();
 
