@@ -21,7 +21,7 @@ public:
 
     ~Train();
 
-    void addCar(string t,int v);
+    void addCar(string t, int v);
 
     void printInfo();//Print one line displaying the number of cars
     //in the train and the total value of the cargo. On a second line, print the train from front
@@ -32,10 +32,11 @@ public:
 
     void drop(string type, int num);
 
-    void printCarInfo();
+    void printTrainInfo();
 
-    TrainNode*getLast();
-    TrainNode*getFirst();
+    TrainNode *getLast();
+
+    TrainNode *getFirst();
 };
 
 #endif //TRAINCPP_TRAIN_H
