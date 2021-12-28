@@ -27,8 +27,7 @@ void processFile(char *filename) {
 
     string nextLine;
     Train *train = new Train();
-    int numCargo = 0;
-    int numEngine = 0;
+
     while (getline(inFile, nextLine)) {
         istringstream iss(nextLine);
         string stuff;
@@ -40,9 +39,9 @@ void processFile(char *filename) {
 
         cout << "Processing command:  " << nextLine << endl;
         if (line.size() > 1) {
-
             if (strcmp(line[0].c_str(), "PICKUP") == 0) {
-
+                int numCargo = 0;
+                int numEngine = 0;
                 int num = atoi(line[1].c_str());
 
                 for (int i = 0; i < num; i++) {
@@ -65,6 +64,9 @@ void processFile(char *filename) {
                 }
                 cout << to_string(numEngine) + " engine and " << numCargo << " cars added to train" << endl;
             }
+        } else {
+            // PRINT
+            train->printTrainInfo();
         }
 
     }

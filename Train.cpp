@@ -33,10 +33,65 @@ void Train::addCar(string t, int v) {
 
         prev->setNext(temp);
         temp->setPrev(last);
-        last =  temp;
+        last = temp;
     }
-
 }//end addCar
+
+int Train::countEngines() {
+    int count = 0;
+    TrainNode *curr = first;
+
+    if (first != NULL) {
+        while (curr != NULL && strcmp(curr->getType().c_str(), "engine") == 0) {
+            count++;
+            curr = curr->getNext();
+        }
+    }
+    return count;
+}//end countEngines
+
+int Train::countCargoCars() {
+    int count = 0;
+    TrainNode *curr = first;
+    if (first != NULL) {
+        while(curr!=NULL){
+            if(strcmp(curr->getType().c_str(),"engine")!=0){
+                count++;
+            }
+            curr = curr->getNext();
+        }
+    }
+    return count;
+}//end countCargoCars
+
+int Train::sumValues() {
+    int total = 0;
+    TrainNode *curr = first;
+
+    if(first!=NULL){
+        while(curr!=NULL){
+            total+=curr->getValue();
+            curr = curr->getNext();
+        }
+    }
+    return total;
+}//end sumValues
+
+void Train::printTrainInfo() {
+    cout << "Total number of engines: " << countEngines() <<", Total number of cargo cars: "<<countCargoCars()<<
+    ", Total value of cargo: $ "<<sumValues()<<endl;
+
+    cout<<"The cars on the train are: "<<endl;
+    TrainNode* curr = first;
+    while(curr!=NULL){
+        cout<<curr->getType();
+        curr = curr->getNext();
+        if(curr!=NULL){
+            cout<<" - ";
+        }
+    }
+    cout<<endl;
+}//end printTrainInfo
 
 int Train::dropFirst(int numToDrop) {
     int numDropped = 0;

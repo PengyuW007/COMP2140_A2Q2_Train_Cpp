@@ -32,6 +32,12 @@ public:
 
     void drop(string type, int num);
 
+    int countEngines();
+
+    int countCargoCars();
+
+    int sumValues();
+
     void printTrainInfo();
 
     TrainNode *getLast();
