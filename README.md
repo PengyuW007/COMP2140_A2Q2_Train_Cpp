@@ -24,3 +24,15 @@ input file).
 
 • The Train class constructor will create a train consisting of one car (an engine, where the
 type of cargo is set to “engine” and the value is set to $0)
+
+##Run
+Compile:
+
+    make
+Run:
+
+    ./main 1.txt   
+main: Name of the program
+
+1.txt: You can replace it with any other txt files, file.txt is replaceable.
+
